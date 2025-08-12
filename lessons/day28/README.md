@@ -155,6 +155,37 @@ export ARM_CLIENT_SECRET="your-client-secret"
 export ARM_SUBSCRIPTION_ID="your-subscription-id"
 export ARM_TENANT_ID="your-tenant-id"
 
+-------OR---------
+Step 1 — Set environment variables in PowerShell
+
+$env:ARM_CLIENT_ID        = "your-client-id"
+$env:ARM_CLIENT_SECRET    = "your-client-secret"
+$env:ARM_SUBSCRIPTION_ID  = "your-subscription-id"
+$env:ARM_TENANT_ID        = "your-tenant-id"
+
+
+Step 2 — Verify they are set
+echo $env:ARM_CLIENT_ID
+echo $env:ARM_CLIENT_SECRET
+echo $env:ARM_SUBSCRIPTION_ID
+echo $env:ARM_TENANT_ID
+
+
+Step 3 — Make them persistent (optional)
+If you don’t want to re-enter them every time you open PowerShell, use setx:
+
+setx ARM_CLIENT_ID "your-client-id"
+setx ARM_CLIENT_SECRET "your-client-secret"
+setx ARM_SUBSCRIPTION_ID "your-subscription-id"
+setx ARM_TENANT_ID "your-tenant-id"
+
+
+Step 4 — Test Terraform authentication
+terraform init
+terraform plan
+
+
+
 # Verify Terraform can authenticate
 terraform version
 ```
